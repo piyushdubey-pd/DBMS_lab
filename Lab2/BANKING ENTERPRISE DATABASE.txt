@@ -65,5 +65,5 @@ Select * from depositor;
 Queries: 
 3) SELECT customer_name FROM depositor d, bank_account a where d.accno=a.accno AND a.branch_name="SBI_Basvangudi" GROUP BY d.customer_name HAVING COUNT(d.customer_name)>=2;
 4)
-SELECT d.costumer_name FROM bank_account a,branch b,depositor d WHERE b.branch_name=a.branch_name AND  a.accno=d.accno AND b.branch_city='Bangalore' GROUP BY d.costumer_name HAVING COUNT(distinct b.branch_name)=(SELECT COUNT(branch_name) FROM branch WHERE branch_city='Bangalore');
+SELECT d.customer_name FROM bank_account a,branch b,depositor d WHERE b.branch_name=a.branch_name AND  a.accno=d.accno AND b.branch_city='Bangalore' GROUP BY d.customer_name HAVING COUNT(distinct b.branch_name)=(SELECT COUNT(branch_name) FROM branch WHERE branch_city='Bangalore');
 5)  DELETE FROM bank_account WHERE branch_name IN(SELECT branch_name FROM branch WHERE branch_city='Jamshedpur');
