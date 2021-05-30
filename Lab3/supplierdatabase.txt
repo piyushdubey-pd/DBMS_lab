@@ -1,3 +1,7 @@
+CREATE TABLE supplier(sid int, sname char(30), address char(30), PRIMARY KEY(sid));
+CREATE TABLE parts(pid int, pname char(30), color char(30), PRIMARY KEY(pid));
+CREATE TABLE catalog(sid int, pid int, cost int, foreign key(sid) references supplier(sid), foreign key(pid) references parts(pid));
+
 INSERT INTO supplier VALUES((110,'Ananad pvt ltd','Jamshedpur'),
                             (123,'Shrinivas hardware','Bangalore'),
                             (785,'Raghav industries','Vellore'),
